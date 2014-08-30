@@ -1,3 +1,7 @@
+/*
+ * NOTE: This code has been imported from a free 3rd party source
+ */
+
 package com.testappengine;
 
 import java.util.ArrayList;

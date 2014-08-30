@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/ideaHud"
+        style="?android:attr/buttonBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:id="@+id/bPostIdea"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Post Idea" />
+
+        <Button
+            android:id="@+id/bRefresh"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Refresh" />
+
+        <Button
+            android:id="@+id/bLogOut"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Log Out" />
+
+        <LinearLayout
+            android:id="@+id/linearlayout3124123"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:weightSum="9" >
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="5"
+                android:src="@drawable/promotion" />
+
+            <TextView
+                android:id="@+id/tvPromTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="2"
+                android:text="-1"
+                android:textColor="@color/darkblue"
+                android:textSize="30dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/horizontalthing"
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:layout_above="@id/ideaHud"
+        android:background="@color/light_grey" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/horizontalthing"
+        android:background="@color/light_grey"
+        android:orientation="vertical" >
+
+        <TabHost
+            android:id="@android:id/tabhost"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+            <LinearLayout
+                android:id="@+id/LinearLayout01"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical" >
+
+                <TabWidget
+                    android:id="@android:id/tabs"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+                </TabWidget>
+
+                <FrameLayout
+                    android:id="@android:id/tabcontent"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent" >
+
+                    <LinearLayout
+                        android:id="@+id/tab1stuff"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/light_grey"
+                        android:orientation="vertical" >
+
+                        <RelativeLayout
+                            android:id="@+id/rlLoadingCircle"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" >
+
+                            <ProgressBar
+                                android:id="@+id/pbIdeaLoading"
+                                style="?android:attr/progressBarStyleLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_gravity="center_vertical|center_horizontal" />
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/light_grey" >
+
+                            <com.testappengine.AnimatedExpandableListView
+                                android:id="@+id/cards_list_loggedin"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:childDivider="@android:color/transparent"
+                                android:clipToPadding="false"
+                                android:divider="@android:color/transparent"
+                                android:dividerHeight="10dp"
+                                android:groupIndicator="@null"
+                                android:padding="10dp"
+                                android:scrollbarStyle="outsideOverlay"
+                                tools:listitem="@layout/list_item_card" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/tab2stuff"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/light_grey"
+                        android:orientation="vertical" >
+
+                        <Spinner
+                            android:id="@+id/sCatFilter"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/light_grey" >
+
+                            <com.testappengine.AnimatedExpandableListView
+                                android:id="@+id/cards_list_loggedin2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:childDivider="@android:color/transparent"
+                                android:clipToPadding="false"
+                                android:divider="@android:color/transparent"
+                                android:dividerHeight="10dp"
+                                android:groupIndicator="@null"
+                                android:padding="10dp"
+                                android:scrollbarStyle="outsideOverlay"
+                                tools:listitem="@layout/list_item_card" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/tab3stuff"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/light_grey"
+                        android:orientation="vertical" >
+
+                        <Spinner
+                            android:id="@+id/sTopFilter"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/light_grey" >
+
+                            <com.testappengine.AnimatedExpandableListView
+                                android:id="@+id/cards_list_loggedin3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:childDivider="@android:color/transparent"
+                                android:clipToPadding="false"
+                                android:divider="@android:color/transparent"
+                                android:dividerHeight="10dp"
+                                android:groupIndicator="@null"
+                                android:padding="10dp"
+                                android:scrollbarStyle="outsideOverlay"
+                                tools:listitem="@layout/list_item_card" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </FrameLayout>
+            </LinearLayout>
+        </TabHost>
+    </LinearLayout>
+
+</RelativeLayout>

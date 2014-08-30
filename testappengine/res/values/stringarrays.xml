@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="categories">
+        <item>Movie</item>
+        <item>Game</item>
+        <item>Website</item>
+        <item>App</item>
+        <item>Invention</item>
+        <item>Company</item> 
+        <item>Prank</item>
+        <item>Party</item>
+        <item>Life</item>
+        <item>School</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="topfilters">
+        <item>All Time</item>
+        <item>This Year</item>
+        <item>This Month</item>
+        <item>This Week</item>
+        <item>Today</item>
+    </string-array>
+</resources>

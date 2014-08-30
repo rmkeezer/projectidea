@@ -1,0 +1,306 @@
+{
+ "kind": "discovery#rpcDescription",
+ "etag": "\"MKGA2miAJpVGF7yQTQhsoDXpye8/5RyHZM9DgjpW9oJ2HgIFxc0N95k\"",
+ "discoveryVersion": "v1",
+ "id": "ideaendpoint:v1",
+ "name": "ideaendpoint",
+ "version": "v1",
+ "description": "This is an API",
+ "ownerDomain": "testappengine.com",
+ "ownerName": "testappengine.com",
+ "icons": {
+  "x16": "http://www.google.com/images/icons/product/search-16.gif",
+  "x32": "http://www.google.com/images/icons/product/search-32.gif"
+ },
+ "protocol": "rpc",
+ "rootUrl": "https://noble-operation-603.appspot.com/_ah/api/",
+ "rpcUrl": "https://noble-operation-603.appspot.com/_ah/api/rpc",
+ "rpcPath": "/_ah/api/rpc",
+ "parameters": {
+  "alt": {
+   "type": "string",
+   "description": "Data format for the response.",
+   "default": "json",
+   "enum": [
+    "json"
+   ],
+   "enumDescriptions": [
+    "Responses with Content-Type of application/json"
+   ],
+   "location": "query"
+  },
+  "fields": {
+   "type": "string",
+   "description": "Selector specifying which fields to include in a partial response.",
+   "location": "query"
+  },
+  "key": {
+   "type": "string",
+   "description": "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.",
+   "location": "query"
+  },
+  "oauth_token": {
+   "type": "string",
+   "description": "OAuth 2.0 token for the current user.",
+   "location": "query"
+  },
+  "prettyPrint": {
+   "type": "boolean",
+   "description": "Returns response with indentations and line breaks.",
+   "default": "true",
+   "location": "query"
+  },
+  "quotaUser": {
+   "type": "string",
+   "description": "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.",
+   "location": "query"
+  },
+  "userIp": {
+   "type": "string",
+   "description": "IP address of the site where the request originates. Use this if you want to enforce per-user limits.",
+   "location": "query"
+  }
+ },
+ "auth": {
+  "oauth2": {
+   "scopes": {
+    "https://www.googleapis.com/auth/userinfo.email": {
+     "description": "View your email address"
+    }
+   }
+  }
+ },
+ "schemas": {
+  "CollectionResponse_Idea": {
+   "id": "CollectionResponse_Idea",
+   "type": "object",
+   "properties": {
+    "items": {
+     "type": "array",
+     "items": {
+      "$ref": "Idea"
+     }
+    },
+    "nextPageToken": {
+     "type": "string"
+    }
+   }
+  },
+  "Idea": {
+   "id": "Idea",
+   "type": "object",
+   "properties": {
+    "category": {
+     "type": "string"
+    },
+    "comDownToAdd": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "comDownvotes": {
+     "type": "array",
+     "items": {
+      "type": "integer",
+      "format": "int32"
+     }
+    },
+    "comJunkToAdd": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "comJunks": {
+     "type": "array",
+     "items": {
+      "type": "integer",
+      "format": "int32"
+     }
+    },
+    "comPromToAdd": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "comPromotions": {
+     "type": "array",
+     "items": {
+      "type": "integer",
+      "format": "int32"
+     }
+    },
+    "comToAdd": {
+     "type": "string"
+    },
+    "comToAddTo": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "comUpToAdd": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "comUpvotes": {
+     "type": "array",
+     "items": {
+      "type": "integer",
+      "format": "int32"
+     }
+    },
+    "comUserToAdd": {
+     "type": "string"
+    },
+    "comUsernames": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "comments": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "downvotes": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "downvotesToAdd": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "idea": {
+     "type": "string"
+    },
+    "junk": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "junkToAdd": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "key": {
+     "type": "string",
+     "format": "int64"
+    },
+    "numOfComments": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "postDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "poster": {
+     "type": "string"
+    },
+    "promotions": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "promotionsToAdd": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "upvotes": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "upvotesToAdd": {
+     "type": "integer",
+     "format": "int32"
+    }
+   }
+  }
+ },
+ "methods": {
+  "ideaendpoint.getIdea": {
+   "id": "ideaendpoint.getIdea",
+   "allowGet": true,
+   "parameters": {
+    "id": {
+     "type": "string",
+     "required": true,
+     "format": "int64"
+    }
+   },
+   "parameterOrder": [
+    "id"
+   ],
+   "returns": {
+    "$ref": "Idea"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "ideaendpoint.insertIdea": {
+   "id": "ideaendpoint.insertIdea",
+   "parameters": {
+    "resource": {
+     "$ref": "Idea"
+    }
+   },
+   "parameterOrder": [
+    "resource"
+   ],
+   "returns": {
+    "$ref": "Idea"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "ideaendpoint.listIdea": {
+   "id": "ideaendpoint.listIdea",
+   "allowGet": true,
+   "parameters": {
+    "cursor": {
+     "type": "string"
+    },
+    "limit": {
+     "type": "integer",
+     "format": "int32"
+    }
+   },
+   "returns": {
+    "$ref": "CollectionResponse_Idea"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "ideaendpoint.removeIdea": {
+   "id": "ideaendpoint.removeIdea",
+   "parameters": {
+    "id": {
+     "type": "string",
+     "required": true,
+     "format": "int64"
+    }
+   },
+   "parameterOrder": [
+    "id"
+   ],
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "ideaendpoint.updateIdea": {
+   "id": "ideaendpoint.updateIdea",
+   "parameters": {
+    "resource": {
+     "$ref": "Idea"
+    }
+   },
+   "parameterOrder": [
+    "resource"
+   ],
+   "returns": {
+    "$ref": "Idea"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  }
+ }
+}

@@ -1,0 +1,285 @@
+{
+  "extends" : "thirdParty.api",
+  "abstract" : false,
+  "root" : "https://noble-operation-603.appspot.com/_ah/api",
+  "name" : "ideaendpoint",
+  "version" : "v1",
+  "defaultVersion" : false,
+  "adapter" : {
+    "bns" : "https://noble-operation-603.appspot.com/_ah/spi",
+    "deadline" : 65.0,
+    "type" : "lily"
+  },
+  "auth" : {
+    "allowCookieAuth" : false
+  },
+  "frontendLimits" : {
+    "unregisteredUserQps" : -1,
+    "unregisteredQps" : -1,
+    "unregisteredDaily" : -1,
+    "rules" : [ ]
+  },
+  "cacheControl" : {
+    "type" : "no-cache",
+    "maxAge" : 0
+  },
+  "ownerDomain" : "testappengine.com",
+  "ownerName" : "testappengine.com",
+  "methods" : {
+    "ideaendpoint.removeIdea" : {
+      "path" : "idea/{id}",
+      "httpMethod" : "DELETE",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.testappengine.IdeaEndpoint.removeIdea",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "type" : "int64",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "empty"
+      }
+    },
+    "ideaendpoint.updateIdea" : {
+      "path" : "idea",
+      "httpMethod" : "PUT",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.testappengine.IdeaEndpoint.updateIdea",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "ideaendpoint.getIdea" : {
+      "path" : "idea/{id}",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.testappengine.IdeaEndpoint.getIdea",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "type" : "int64",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "ideaendpoint.listIdea" : {
+      "path" : "idea",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.testappengine.IdeaEndpoint.listIdea",
+      "request" : {
+        "parameters" : {
+          "cursor" : {
+            "type" : "string",
+            "required" : false
+          },
+          "limit" : {
+            "type" : "int32",
+            "required" : false
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "ideaendpoint.insertIdea" : {
+      "path" : "idea",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.testappengine.IdeaEndpoint.insertIdea",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    }
+  },
+  "descriptor" : {
+    "schemas" : {
+      "Idea" : {
+        "id" : "Idea",
+        "type" : "object",
+        "properties" : {
+          "key" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "idea" : {
+            "type" : "string"
+          },
+          "postDate" : {
+            "type" : "string",
+            "format" : "date-time"
+          },
+          "category" : {
+            "type" : "string"
+          },
+          "upvotes" : {
+            "type" : "integer"
+          },
+          "upvotesToAdd" : {
+            "type" : "integer"
+          },
+          "downvotes" : {
+            "type" : "integer"
+          },
+          "downvotesToAdd" : {
+            "type" : "integer"
+          },
+          "promotions" : {
+            "type" : "integer"
+          },
+          "promotionsToAdd" : {
+            "type" : "integer"
+          },
+          "junk" : {
+            "type" : "integer"
+          },
+          "junkToAdd" : {
+            "type" : "integer"
+          },
+          "numOfComments" : {
+            "type" : "integer"
+          },
+          "comments" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "comToAdd" : {
+            "type" : "string"
+          },
+          "comToAddTo" : {
+            "type" : "integer"
+          },
+          "comUserToAdd" : {
+            "type" : "string"
+          },
+          "comUpToAdd" : {
+            "type" : "integer"
+          },
+          "comDownToAdd" : {
+            "type" : "integer"
+          },
+          "comPromToAdd" : {
+            "type" : "integer"
+          },
+          "comJunkToAdd" : {
+            "type" : "integer"
+          },
+          "comUpvotes" : {
+            "type" : "array",
+            "items" : {
+              "type" : "integer"
+            }
+          },
+          "comJunks" : {
+            "type" : "array",
+            "items" : {
+              "type" : "integer"
+            }
+          },
+          "poster" : {
+            "type" : "string"
+          },
+          "comUsernames" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "comDownvotes" : {
+            "type" : "array",
+            "items" : {
+              "type" : "integer"
+            }
+          },
+          "comPromotions" : {
+            "type" : "array",
+            "items" : {
+              "type" : "integer"
+            }
+          }
+        }
+      },
+      "CollectionResponse_Idea" : {
+        "id" : "CollectionResponse_Idea",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "Idea"
+            }
+          },
+          "nextPageToken" : {
+            "type" : "string"
+          }
+        }
+      }
+    },
+    "methods" : {
+      "com.testappengine.IdeaEndpoint.removeIdea" : {
+      },
+      "com.testappengine.IdeaEndpoint.updateIdea" : {
+        "request" : {
+          "$ref" : "Idea"
+        },
+        "response" : {
+          "$ref" : "Idea"
+        }
+      },
+      "com.testappengine.IdeaEndpoint.getIdea" : {
+        "response" : {
+          "$ref" : "Idea"
+        }
+      },
+      "com.testappengine.IdeaEndpoint.listIdea" : {
+        "response" : {
+          "$ref" : "CollectionResponse_Idea"
+        }
+      },
+      "com.testappengine.IdeaEndpoint.insertIdea" : {
+        "request" : {
+          "$ref" : "Idea"
+        },
+        "response" : {
+          "$ref" : "Idea"
+        }
+      }
+    }
+  }
+}
